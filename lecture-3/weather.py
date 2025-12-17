@@ -101,16 +101,11 @@ def main(page: ft.Page):
         tabs.selected_index = 0
         update_weather_by_tab(0)
 
-    # =====================
     # 地域データ取得
-    # =====================
     area_json = requests.get(AREA_URL).json()
     centers = area_json["centers"]
     offices = area_json["offices"]
 
-    # =====================
-    # 左ペイン（地方 → 都道府県）
-    # =====================
     left_column = ft.Column(
         expand=True,
         scroll=ft.ScrollMode.AUTO,
